@@ -3,7 +3,7 @@ canvas绘制多边形圆角
 
 文件实例用于JQ插件，wiki中有非完整版js逻辑。
 
-#初始化方法
+# 初始化方法
 $("#canvas").roundedPolygon(options）; 
 options = {
   width : 400,//画布宽度
@@ -22,6 +22,6 @@ options = {
   scale_max: 1.5
 }
 
-#其他方法
+# 其他方法
 _drawImg() 简单的纹理填充
 _loopScale() 可实现纹理缩放的调用
