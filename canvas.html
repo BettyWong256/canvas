@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>leaflet</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="round_polygon.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        $(function(){
+            $("#canvas").roundedPolygon({
+                width : 200,//画布宽度
+                height : 200 ,//画布高度
+                N:6, // N边形
+                side: 100, // 边长 
+                row: 0, // 起始点偏移角度a
+                radius:30, // 夹角圆弧半径,
+                has_round: true, // 是否圆角
+                fill_style: 3, // 填充1，边框2，路径截取3
+                img_url:'http://p4-q.mafengwo.net/s1/M00/29/FF/wKgIC1zuCMWAClcDAA9txiVmqhw035.jpg', // 填充图片
+                img_width: 300, // 图片宽度
+                img_height: 200,// 图片高度
+                scale_speed: 0.05
+            });
+            $("body").on('mouseenter','#canvas',function(){
+                $(this).roundedPolygon('_loopScale');
+            });
+            $("body").on('mouseleave','#canvas',function(){
+                $(this).roundedPolygon('_drawImg');
+            });
+
+        })
+    </script>
+</body>
+</html>
